@@ -65,9 +65,10 @@ function Home({ onScrollChange }) {
             Software Engineering Student @ University of Auckland
           </Typography>
           <Divider sx={{ width: "40%", color: "primary.main" }} />
-          <Typography variant="body1" sx={{ mt: "1rem" }}>
-            Ambitious software engineering student eagerly looking to gain real-world experience and
-            to advance my software development skills.
+          <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.9rem" }}>
+            I am an ambitious software engineering student eager to gain real-world experience and to 
+            advance my technical and soft skills. This industry is an exciting career path for me as 
+            it enables me to think outside the box and work within a multi-disciplinary environment. 
           </Typography>
           <Box sx={{ ml: "-0.5rem", mt: "1rem", display: "flex" }}>
             <Link
