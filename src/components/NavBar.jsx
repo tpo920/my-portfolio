@@ -1,7 +1,6 @@
-import { Box, Tabs, Tab, AppBar, Toolbar, Tooltip, Typography, Button, Link } from "@mui/material";
+import { Box, Tabs, Tab, AppBar, Toolbar, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { HashLink } from "react-router-hash-link";
-import resume from "../assets/pdf/resume.pdf";
 
 export default function NavBar({ tabs, value, handleChange }) {
   return (
@@ -22,13 +21,6 @@ export default function NavBar({ tabs, value, handleChange }) {
             Trevor Po
           </Typography>
           <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
-          <Box sx={{ ml: "1rem" }}>
-            <Link href={resume} without="true" rel="noopener noreferrer" target="_blank">
-              <Tooltip title="Open Resume">
-                <Button variant="outlined">RESUME</Button>
-              </Tooltip>
-            </Link>
-          </Box>
         </Toolbar>
       </Box>
     </AppBar>
