@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import {
   Box,
   Avatar,
-  Toolbar,
   Typography,
   Divider,
   IconButton,
   Link,
-  Snackbar
+  Snackbar,
 } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -40,14 +39,14 @@ function Home({ onScrollChange }) {
   }, [homeView]);
 
   return (
-    <Box ref={myRef} component="section" id="home" sx={{ flexGrow: 1 }}>
-      <Toolbar />
+    <Box ref={myRef} component="section" id="home" sx={{
+      width: "100%", height: "100vh", display: 'flex',
+      flexDirection: 'column', alignItems: "center", justifyContent: "center",
+    }}>
       <Box
         sx={{
-          justifyContent: "center",
           display: "flex",
           flexDirection: "row",
-          m: "12rem"
         }}
       >
         <Box sx={{ width: "27rem" }}>
@@ -62,13 +61,13 @@ function Home({ onScrollChange }) {
             Trevor
           </Typography>
           <Typography variant="subtitle1">
-            Software Engineering Student @ University of Auckland
+            Software Engineering Student @ The University of Auckland
           </Typography>
           <Divider sx={{ width: "40%", color: "primary.main" }} />
           <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.9rem" }}>
-            I am an ambitious software engineering student eager to gain real-world experience and to 
-            advance my technical and soft skills. This industry is an exciting career path for me as 
-            it enables me to think outside the box and work within a multi-disciplinary environment. 
+            I am an ambitious software engineering student eager to gain real-world experience and to
+            advance my technical and soft skills. This industry is an exciting career path for me as
+            it enables me to think outside the box and work within a multi-disciplinary environment.
           </Typography>
           <Box sx={{ ml: "-0.5rem", mt: "1rem", display: "flex" }}>
             <Link
