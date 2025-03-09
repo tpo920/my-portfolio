@@ -1,26 +1,39 @@
-import { Box, Tabs, Tab, AppBar, Toolbar, Typography } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Tabs, Tab, AppBar, Toolbar, Typography, Drawer, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { HashLink } from "react-router-hash-link";
+import MenuIcon from '@mui/icons-material/Menu';
 
 export default function NavBar({ tabs, value, handleChange }) {
+  const [drawerStatus, setDrawer] = useState(false);
+
   return (
     <AppBar position="fixed" sx={{ background: "#fefefe", boxShadow: "none" }}>
-      <Box sx={{ flexGrow: 1, ml: "15rem", mr: "15rem" }}>
+      <Box sx={{ mx: { xs: "0rem", md: "10rem" } }}>
         <Toolbar>
-          <Typography
-            component={HashLink}
-            to="#"
-            smooth="true"
-            sx={{
-              flexGrow: 1,
-              color: "primary.dark",
-              textDecoration: "inherit",
-              fontFamily: "Poppins"
-            }}
-          >
-            Trevor Po
-          </Typography>
-          <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
+          <Box sx={{ flexGrow: 1 }}>
+            <Typography
+              component={HashLink}
+              to="#"
+              smooth="true"
+              sx={{
+                color: "primary.dark",
+                textDecoration: "inherit",
+                fontFamily: "Poppins",
+              }}
+            >
+              Trevor Po
+            </Typography>
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
+          </Box>
+          {/* Menu-icon for mobile/small screens*/}
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton size="small">
+              <MenuIcon sx={{ width: "2rem", height: "2rem" }} />
+            </IconButton>
+          </Box>
         </Toolbar>
       </Box>
     </AppBar>
