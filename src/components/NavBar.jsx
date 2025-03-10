@@ -1,17 +1,28 @@
 import React, { useState } from "react";
-import { Box, Tabs, Tab, AppBar, Toolbar, Typography, Drawer, IconButton } from "@mui/material";
+import {
+  Box, Tabs, Tab, AppBar, Toolbar, Typography, SwipeableDrawer, IconButton,
+  Avatar, List, ListItem, ListItemButton, ListItemText, Button, Divider
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { HashLink } from "react-router-hash-link";
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 export default function NavBar({ tabs, value, handleChange }) {
   const [drawerStatus, setDrawer] = useState(false);
+  const iOS =
+    typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+
+  const scrollWithCloseDrawer = async () => {
+    await setDrawer(false);
+  };
 
   return (
     <AppBar position="fixed" sx={{ background: "#fefefe", boxShadow: "none" }}>
       <Box sx={{ mx: { xs: "0rem", md: "10rem" } }}>
         <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
             <Typography
               component={HashLink}
               to="#"
@@ -25,18 +36,77 @@ export default function NavBar({ tabs, value, handleChange }) {
               Trevor Po
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
           </Box>
           {/* Menu-icon for mobile/small screens*/}
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton size="small">
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: "flex-end" }}>
+            <IconButton size="small" onClick={() => setDrawer(true)}>
               <MenuIcon sx={{ width: "2rem", height: "2rem" }} />
             </IconButton>
           </Box>
+          {/* Top Drawer Menu */}
+          <SwipeableDrawer
+            anchor={"top"}
+            disableBackdropTransition={!iOS} disableDiscovery={iOS}
+            open={drawerStatus}
+            onClose={() => setDrawer(false)}
+            SlideProps={{ easing: 'ease-in-out' }}
+            sx={{ display: { xs: 'flex', sm: 'none' } }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                p: "1rem",
+              }}
+            >
+              <Avatar
+                alt="Profile Picture"
+                src="/images/profilepic.jpg"
+                sx={{ width: "3rem", height: "3rem" }}
+              />
+              <Typography
+                variant="body1"
+                sx={{
+                  ml: "1rem",
+                  fontWeight: "bold",
+                  flexGrow: 1
+                }}
+              >
+                Trevor Po
+              </Typography>
+              <IconButton sx={{ width: "2rem", height: "2rem" }} onClick={() => setDrawer(false)}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
+            <Divider />
+            <List>
+              {tabs.map(({ title, to }) => (
+                <ListItem key={to} disablePadding>
+                  <ListItemButton sx={{
+                    py: "0.7rem", textAlign: "center", justifyContent: "center",
+                    "&.MuiButtonBase-root:hover": {
+                      bgcolor: "transparent"
+                    },
+                    "&:hover": {
+                      color: "#5980c1",
+                      opacity: 1
+                    },
+                  }}
+                    disableRipple>
+                    <Typography sx={{ fontSize: "0.9rem" }} >
+                      {title.toUpperCase()}
+                    </Typography>
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </SwipeableDrawer>
         </Toolbar>
       </Box>
-    </AppBar>
+    </AppBar >
   );
 }
 
