@@ -26,7 +26,7 @@ function Experience({ onScrollChange }) {
   return (
     <Box ref={myRef} component="section" id="experience"
       sx={{
-        width: "100%", height: "140vh", display: 'flex', flexDirection: 'column',
+        width: "100%", minHeight: "140vh", display: 'flex', flexDirection: 'column',
         alignItems: "center", justifyContent: "center"
       }}>
       <Typography variant="h5" color="primary.dark">
