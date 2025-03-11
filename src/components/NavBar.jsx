@@ -76,7 +76,6 @@ export default function NavBar({ tabs, value, handleChange }) {
                 variant="body1"
                 sx={{
                   ml: "1rem",
-                  fontWeight: "bold",
                   flexGrow: 1
                 }}
               >
@@ -93,9 +92,6 @@ export default function NavBar({ tabs, value, handleChange }) {
                   <ListItemButton
                     sx={{
                       py: "0.7rem", textAlign: "center", justifyContent: "center",
-                      "&.MuiButtonBase-root:hover": {
-                        bgcolor: "transparent"
-                      },
                       "&:hover": {
                         color: "#5980c1",
                         opacity: 1
