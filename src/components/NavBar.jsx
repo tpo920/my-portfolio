@@ -1,34 +1,43 @@
 import React, { useState, useEffect } from "react";
 import {
-  Box, Tabs, Tab, AppBar, Toolbar, Typography, SwipeableDrawer, IconButton,
-  Avatar, List, ListItem, ListItemButton, Divider
+  Box,
+  Tabs,
+  Tab,
+  AppBar,
+  Toolbar,
+  Typography,
+  SwipeableDrawer,
+  IconButton,
+  Avatar,
+  List,
+  ListItem,
+  ListItemButton,
+  Divider
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { HashLink } from "react-router-hash-link";
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import { useWindowSize } from "../hooks/useWindowSize"
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
+import { useWindowSize } from "../hooks/useWindowSize";
 
 export default function NavBar({ tabs, value, handleChange }) {
   const [drawer, setDrawer] = useState(false);
-  const iOS =
-    typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
-
+  const iOS = typeof navigator !== "undefined" && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
   const scrollToSection = async (ref) => {
-    document.getElementById(ref.toLowerCase()).scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(ref.toLowerCase()).scrollIntoView({ behavior: "smooth" });
     setDrawer(false);
   };
 
   useEffect(() => {
-    setDrawer(false)
-  }, [useWindowSize()])
+    setDrawer(false);
+  }, [useWindowSize()]);
 
   return (
     <AppBar position="fixed" sx={{ background: "#fefefe", boxShadow: "none" }}>
       <Box sx={{ mx: { xs: "0rem", md: "10rem" } }}>
         <Toolbar>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
             <Typography
               component={HashLink}
               to="#"
@@ -36,17 +45,19 @@ export default function NavBar({ tabs, value, handleChange }) {
               sx={{
                 color: "primary.dark",
                 textDecoration: "inherit",
-                fontFamily: "Poppins",
+                fontFamily: "Poppins"
               }}
             >
               Trevor Po
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
             <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
           </Box>
           {/* Menu-icon for mobile/small screens*/}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', sm: 'none' }, justifyContent: "flex-end" }}>
+          <Box
+            sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" }, justifyContent: "flex-end" }}
+          >
             <IconButton size="small" onClick={() => setDrawer(true)}>
               <MenuIcon sx={{ width: "2rem", height: "2rem" }} />
             </IconButton>
@@ -54,17 +65,18 @@ export default function NavBar({ tabs, value, handleChange }) {
           {/* Top Drawer Menu */}
           <SwipeableDrawer
             anchor={"top"}
-            disableBackdropTransition={!iOS} disableDiscovery={iOS}
+            disableBackdropTransition={!iOS}
+            disableDiscovery={iOS}
             open={drawer}
             onClose={() => setDrawer(false)}
-            SlideProps={{ easing: 'ease-in-out' }}
+            SlideProps={{ easing: "ease-in-out" }}
           >
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
-                p: "1rem",
+                p: "1rem"
               }}
             >
               <Avatar
@@ -91,18 +103,18 @@ export default function NavBar({ tabs, value, handleChange }) {
                 <ListItem key={to} disablePadding>
                   <ListItemButton
                     sx={{
-                      py: "0.7rem", textAlign: "center", justifyContent: "center",
+                      py: "0.7rem",
+                      textAlign: "center",
+                      justifyContent: "center",
                       "&:hover": {
                         color: "#5980c1",
                         opacity: 1
-                      },
+                      }
                     }}
                     disableRipple
                     onClick={() => scrollToSection(title)}
                   >
-                    <Typography sx={{ fontSize: "0.9rem" }} >
-                      {title.toUpperCase()}
-                    </Typography>
+                    <Typography sx={{ fontSize: "0.9rem" }}>{title.toUpperCase()}</Typography>
                   </ListItemButton>
                 </ListItem>
               ))}
@@ -110,7 +122,7 @@ export default function NavBar({ tabs, value, handleChange }) {
           </SwipeableDrawer>
         </Toolbar>
       </Box>
-    </AppBar >
+    </AppBar>
   );
 }
 

@@ -1,14 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  Avatar,
-  Typography,
-  Divider,
-  IconButton,
-  Link,
-  Snackbar,
-  Grid
-} from "@mui/material";
+import { Box, Avatar, Typography, Divider, IconButton, Link, Snackbar, Grid } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -40,16 +31,25 @@ function Home({ onScrollChange }) {
   }, [homeView]);
 
   return (
-    <Box ref={myRef} component="section" id="home" sx={{
-      width: "100%", minHeight: "100vh", display: 'flex',
-      flexDirection: 'column', alignItems: "center", justifyContent: "center",
-    }}>
-      <Grid container spacing={3} >
+    <Box
+      ref={myRef}
+      component="section"
+      id="home"
+      sx={{
+        width: "100%",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
+      <Grid container spacing={3}>
         <Grid item xs={1} md={2} />
-        <Grid item xs={10} md={8} >
-          <Grid container spacing={3} >
+        <Grid item xs={10} md={8}>
+          <Grid container spacing={3}>
             <Grid item md={1.5} sx={{ display: { sm: "none", md: "flex" } }} />
-            <Grid item xs={12} sm={6} md={6} >
+            <Grid item xs={12} sm={6} md={6}>
               <Typography variant="h3" component="span" sx={{ fontFamily: "Poppins" }}>
                 Hi, I'm{" "}
               </Typography>
@@ -65,9 +65,10 @@ function Home({ onScrollChange }) {
               </Typography>
               <Divider sx={{ width: "40%", color: "primary.main" }} />
               <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.9rem" }}>
-                I am an ambitious software engineering student eager to gain real-world experience and to
-                advance my technical and soft skills. This industry is an exciting career path for me as
-                it enables me to think outside the box and work within a multi-disciplinary environment.
+                I am an ambitious software engineering student eager to gain real-world experience
+                and to advance my technical and soft skills. This industry is an exciting career
+                path for me as it enables me to think outside the box and work within a
+                multi-disciplinary environment.
               </Typography>
               <Box sx={{ ml: "-0.5rem", mt: "1rem", display: "flex" }}>
                 <Link
@@ -99,14 +100,24 @@ function Home({ onScrollChange }) {
                   onClose={handleClose}
                   message="trevorpo802@gmail.com"
                   action={
-                    <IconButton size="small" aria-label="close" color="primary" onClick={handleClose}>
+                    <IconButton
+                      size="small"
+                      aria-label="close"
+                      color="primary"
+                      onClick={handleClose}
+                    >
                       <CloseIcon fontSize="small" />
                     </IconButton>
                   }
                 />
               </Box>
             </Grid>
-            <Grid item sm={6} md={4} sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}>
+            <Grid
+              item
+              sm={6}
+              md={4}
+              sx={{ display: { xs: "none", sm: "flex" }, justifyContent: "center" }}
+            >
               <Avatar
                 alt="Profile Picture"
                 src="/images/profilepic.jpg"

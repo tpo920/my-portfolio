@@ -24,11 +24,19 @@ function Experience({ onScrollChange }) {
   }, [experienceView]);
 
   return (
-    <Box ref={myRef} component="section" id="experience"
+    <Box
+      ref={myRef}
+      component="section"
+      id="experience"
       sx={{
-        width: "100%", minHeight: "140vh", display: 'flex', flexDirection: 'column',
-        alignItems: "center", justifyContent: "center"
-      }}>
+        width: "100%",
+        minHeight: "140vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      }}
+    >
       <Typography variant="h5" color="primary.dark">
         WORK EXPERIENCE
       </Typography>
@@ -52,7 +60,8 @@ function Experience({ onScrollChange }) {
                 03/2025 - Present
               </Typography>
               <Typography>
-                Supporting and tutoring Part 2 ECSE students in a friendly and casual learning environment.
+                Supporting and tutoring Part 2 ECSE students in a friendly and casual learning
+                environment.
               </Typography>
             </TimelineContent>
           </TimelineItem>
@@ -74,8 +83,9 @@ function Experience({ onScrollChange }) {
                 11/2023 - 02/2024
               </Typography>
               <Typography>
-                Implemented methods of data communication via Bluetooth Low Energy between a UTRED30-Wifi and
-                third-party probes through developing an extensible state handler and parser with C/C++.
+                Implemented methods of data communication via Bluetooth Low Energy between a
+                UTRED30-Wifi and third-party probes through developing an extensible state handler
+                and parser with C/C++.
               </Typography>
             </TimelineContent>
           </TimelineItem>
@@ -95,8 +105,8 @@ function Experience({ onScrollChange }) {
                 01/2023 - 04/2023
               </Typography>
               <Typography>
-                Developed a web-scraping code with PHP and HTML to automate compilation of .csv records and parse data
-                into a presentable format.
+                Developed a web-scraping code with PHP and HTML to automate compilation of .csv
+                records and parse data into a presentable format.
               </Typography>
             </TimelineContent>
           </TimelineItem>
