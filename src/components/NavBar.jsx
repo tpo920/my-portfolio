@@ -1,22 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Box, Tabs, Tab, AppBar, Toolbar, Typography, SwipeableDrawer, IconButton,
-  Avatar, List, ListItem, ListItemButton, ListItemText, Button, Divider
+  Avatar, List, ListItem, ListItemButton, Divider
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { HashLink } from "react-router-hash-link";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { useWindowSize } from "../hooks/useWindowSize"
 
 export default function NavBar({ tabs, value, handleChange }) {
-  const [drawerStatus, setDrawer] = useState(false);
+  const [drawer, setDrawer] = useState(false);
   const iOS =
     typeof navigator !== 'undefined' && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 
-  const scrollWithCloseDrawer = async () => {
-    await setDrawer(false);
+  const scrollToSection = async (ref) => {
+    document.getElementById(ref.toLowerCase()).scrollIntoView({ behavior: 'smooth' });
+    setDrawer(false);
   };
+
+  useEffect(() => {
+    setDrawer(false)
+  }, [useWindowSize()])
 
   return (
     <AppBar position="fixed" sx={{ background: "#fefefe", boxShadow: "none" }}>
@@ -49,10 +55,9 @@ export default function NavBar({ tabs, value, handleChange }) {
           <SwipeableDrawer
             anchor={"top"}
             disableBackdropTransition={!iOS} disableDiscovery={iOS}
-            open={drawerStatus}
+            open={drawer}
             onClose={() => setDrawer(false)}
             SlideProps={{ easing: 'ease-in-out' }}
-            sx={{ display: { xs: 'flex', sm: 'none' } }}
           >
             <Box
               sx={{
@@ -85,17 +90,20 @@ export default function NavBar({ tabs, value, handleChange }) {
             <List>
               {tabs.map(({ title, to }) => (
                 <ListItem key={to} disablePadding>
-                  <ListItemButton sx={{
-                    py: "0.7rem", textAlign: "center", justifyContent: "center",
-                    "&.MuiButtonBase-root:hover": {
-                      bgcolor: "transparent"
-                    },
-                    "&:hover": {
-                      color: "#5980c1",
-                      opacity: 1
-                    },
-                  }}
-                    disableRipple>
+                  <ListItemButton
+                    sx={{
+                      py: "0.7rem", textAlign: "center", justifyContent: "center",
+                      "&.MuiButtonBase-root:hover": {
+                        bgcolor: "transparent"
+                      },
+                      "&:hover": {
+                        color: "#5980c1",
+                        opacity: 1
+                      },
+                    }}
+                    disableRipple
+                    onClick={() => scrollToSection(title)}
+                  >
                     <Typography sx={{ fontSize: "0.9rem" }} >
                       {title.toUpperCase()}
                     </Typography>
