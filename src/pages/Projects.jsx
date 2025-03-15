@@ -29,8 +29,8 @@ function Projects({ onScrollChange }) {
         mt: "1rem"
       }}
     >
-      <Typography variant="h5" color="primary.dark">
-        PROJECTS
+      <Typography variant="h4" sx={{ fontFamily: "Poppins" }}>
+        My Projects
       </Typography>
       <Box sx={{ justifyContent: "center", display: "flex" }}>
         <Grid container spacing={2} p={3}>

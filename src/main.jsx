@@ -5,7 +5,7 @@ import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["sans-serif", "Poppins"].join(",")
+    fontFamily: ["Poppins"].join(",")
   },
   palette: {
     background: {
