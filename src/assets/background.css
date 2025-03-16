@@ -1,0 +1,64 @@
+/*layer 1*/ 
+.custom-shape-divider-bottom-1742093394 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1742093394 svg {
+    position: relative;
+    display: block;
+    width: calc(104% + 1.3px);
+    height: 129px;
+}
+
+.custom-shape-divider-bottom-1742093394 .shape-fill {
+    fill: #4672ba;
+}
+
+/*layer 2*/ 
+.custom-shape-divider-bottom-1742097218 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1742097218 svg {
+    position: relative;
+    display: block;
+    width: calc(104% + 1.3px);
+    height: 92px;
+}
+
+.custom-shape-divider-bottom-1742097218 .shape-fill {
+    fill: #FEFEFE;
+}
+
+/*Layer 3*/
+.custom-shape-divider-bottom-1742104634 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1742104634 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 180px;
+}
+
+.custom-shape-divider-bottom-1742104634 .shape-fill {
+    fill: #FEFEFE;
+}

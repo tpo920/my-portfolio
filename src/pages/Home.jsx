@@ -41,7 +41,8 @@ function Home({ onScrollChange }) {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        position: "relative"
       }}
     >
       <Grid container spacing={3}>
@@ -63,7 +64,7 @@ function Home({ onScrollChange }) {
               <Typography variant="subtitle1">
                 Software Engineering Student @ The University of Auckland
               </Typography>
-              <Divider sx={{ width: "40%", color: "primary.main" }} />
+              <Divider sx={{ width: "40%", bgcolor: "primary.light", borderBottomWidth: 3 }} />
               <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.8rem" }}>
                 I am an ambitious software engineering student eager to gain real-world experience
                 and to advance my technical and soft skills. This industry is an exciting career
