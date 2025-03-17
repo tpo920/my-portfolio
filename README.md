@@ -1,7 +1,7 @@
 ﻿# My Portfolio
 A simple portfolio about me
 
-## 💾 Development
+## 💾 Development - 🔧 Currently in works for new features
 This project uses:
 - [React.js](https://react.dev) & [Vite](https://vitejs.dev) for the front-end and server tooling
 - [MUI](https://mui.com/) to build and style the application
