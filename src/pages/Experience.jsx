@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Box, Typography, Divider, Container } from "@mui/material";
-import { useInView } from "react-intersection-observer";
 import {
   Timeline,
   TimelineItem,
@@ -12,26 +11,15 @@ import TimelineSection from "../components/TimelineSection";
 import workExperienceData from "../utils/WorkExperienceData";
 import "../assets/background.css";
 
-function Experience({ onScrollChange }) {
-  const { ref: myRef, inView: experienceView } = useInView({ threshold: 0.2 });
+function Experience() {
   const [expanded, setExpanded] = useState('')
 
   const handleChange = (panel) => (event, newExpanded) => {
     setExpanded(newExpanded ? panel : false);
   };
 
-  // Set NavBar to experience tab
-  useEffect(() => {
-    if (experienceView) {
-      onScrollChange("two");
-    }
-  }, [experienceView]);
-
   return (
     <Box
-      ref={myRef}
-      component="section"
-      id="experience"
       sx={{
         width: "100%",
         minHeight: "130vh",

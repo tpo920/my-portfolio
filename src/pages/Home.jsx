@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Avatar, Typography, Divider, IconButton, Link, Snackbar, Grid } from "@mui/material";
-import { useInView } from "react-intersection-observer";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
 
-function Home({ onScrollChange }) {
+function Home() {
   const [open, setOpen] = useState(false);
-  const { ref: myRef, inView: homeView } = useInView({ threshold: 0.2 });
 
   // Open Snackbar
   const handleClick = () => {
@@ -23,18 +21,8 @@ function Home({ onScrollChange }) {
     setOpen(false);
   };
 
-  // Set NavBar to home tab
-  useEffect(() => {
-    if (homeView) {
-      onScrollChange("one");
-    }
-  }, [homeView]);
-
   return (
     <Box
-      ref={myRef}
-      component="section"
-      id="home"
       sx={{
         width: "100%",
         minHeight: "100vh",

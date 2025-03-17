@@ -1,24 +1,10 @@
-import { useEffect } from "react";
 import { Box, Grid, Typography, Divider, Container } from "@mui/material";
-import { useInView } from "react-intersection-observer";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../utils/ProjectData";
 
-function Projects({ onScrollChange }) {
-  const { ref: myRef, inView: projectsView } = useInView({ threshold: 0.2 });
-
-  // Set NavBar to projects tab
-  useEffect(() => {
-    if (projectsView) {
-      onScrollChange("three");
-    }
-  }, [projectsView]);
-
+function Projects() {
   return (
     <Box
-      ref={myRef}
-      component="section"
-      id="projects"
       sx={{
         width: "100%",
         minHeight: "100vh",
