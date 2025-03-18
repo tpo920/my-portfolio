@@ -26,10 +26,9 @@ function Experience() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        background: "linear-gradient(180deg, hsla(217, 46%, 50%, 1) 40%,  #7279d8 100%)",
         position: "relative",
       }}
-    >
+    > 
       <Container sx={{ display: "flex", flexDirection: "column", alignItems: "center", mt: "7rem" }}>
         <Box sx={{
           mb: "4rem",
@@ -52,11 +51,6 @@ function Experience() {
         </Timeline>
       </Container>
       <Box sx={{ width: "100%", height: "20vh" }} />
-      <div className="custom-shape-divider-bottom-1742104634">
-        <svg data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
-        </svg>
-      </div>
     </Box>
   );
 }
