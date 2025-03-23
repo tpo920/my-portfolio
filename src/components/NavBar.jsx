@@ -12,7 +12,7 @@ import {
   List,
   ListItem,
   ListItemButton,
-  Divider
+  Divider,
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { HashLink } from "react-router-hash-link";
@@ -34,95 +34,100 @@ export default function NavBar({ tabs, value, handleChange }) {
   }, [useWindowSize()]);
 
   return (
-    <AppBar position="fixed" sx={{ background: "#fefefe", boxShadow: "none" }}>
-      <Box sx={{ mx: { xs: "0rem", md: "10rem" } }}>
-        <Toolbar>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
-            <Typography
-              component={HashLink}
-              to="#"
-              smooth="true"
-              sx={{
-                color: "primary.dark",
-                textDecoration: "inherit",
-                fontFamily: "Poppins"
-              }}
-            >
-              Trevor Po
-            </Typography>
-          </Box>
-          <Box sx={{ display: { xs: "none", sm: "flex" } }}>
-            <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
-          </Box>
-          {/* Menu-icon for mobile/small screens*/}
-          <Box
-            sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" }, justifyContent: "flex-end" }}
-          >
-            <IconButton size="small" onClick={() => setDrawer(true)}>
-              <MenuIcon sx={{ width: "2rem", height: "2rem" }} />
-            </IconButton>
-          </Box>
-          {/* Top Drawer Menu */}
-          <SwipeableDrawer
-            anchor={"top"}
-            disableBackdropTransition={!iOS}
-            disableDiscovery={iOS}
-            open={drawer}
-            onClose={() => setDrawer(false)}
-            SlideProps={{ easing: "ease-in-out" }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                p: "1rem"
-              }}
-            >
-              <Avatar
-                alt="Profile Picture"
-                src="/images/profilepic.jpg"
-                sx={{ width: "3rem", height: "3rem" }}
-              />
+      <AppBar position="fixed" sx={{ background: "#fefefe" + 'ef', boxShadow: "none" }}>
+        <Box sx={{ mx: { xs: "0rem", md: "10rem" } }}>
+          <Toolbar>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "flex" } }}>
               <Typography
-                variant="body1"
+                component={HashLink}
+                to="#"
+                smooth="true"
                 sx={{
-                  ml: "1rem",
-                  flexGrow: 1
+                  color: "primary.dark",
+                  textDecoration: "inherit",
+                  fontFamily: "Poppins",
+                  fontWeight: "medium"
                 }}
               >
                 Trevor Po
               </Typography>
-              <IconButton sx={{ width: "2rem", height: "2rem" }} onClick={() => setDrawer(false)}>
-                <CloseIcon />
+            </Box>
+            <Box sx=
+              {{
+                display: { xs: "none", sm: "flex" }
+              }}>
+              <NavBarTabs tabs={tabs} value={value} handleChange={handleChange} />
+            </Box>
+            {/* Menu-icon for mobile/small screens*/}
+            <Box
+              sx={{ flexGrow: 1, display: { xs: "flex", sm: "none" }, justifyContent: "flex-end" }}
+            >
+              <IconButton size="small" onClick={() => setDrawer(true)}>
+                <MenuIcon sx={{ width: "2rem", height: "2rem" }} />
               </IconButton>
             </Box>
-            <Divider />
-            <List>
-              {tabs.map(({ title, to }) => (
-                <ListItem key={to} disablePadding>
-                  <ListItemButton
-                    sx={{
-                      py: "0.7rem",
-                      textAlign: "center",
-                      justifyContent: "center",
-                      "&:hover": {
-                        color: "#5980c1",
-                        opacity: 1
-                      }
-                    }}
-                    disableRipple
-                    onClick={() => scrollToSection(title)}
-                  >
-                    <Typography sx={{ fontSize: "0.9rem" }}>{title.toUpperCase()}</Typography>
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-          </SwipeableDrawer>
-        </Toolbar>
-      </Box>
-    </AppBar>
+            {/* Top Drawer Menu */}
+            <SwipeableDrawer
+              anchor={"top"}
+              disableBackdropTransition={!iOS}
+              disableDiscovery={iOS}
+              open={drawer}
+              onOpen={() => setDrawer(true)}
+              onClose={() => setDrawer(false)}
+              SlideProps={{ easing: "ease-in-out" }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  p: "1rem"
+                }}
+              >
+                <Avatar
+                  alt="Profile Picture"
+                  src="/images/profilepic.jpg"
+                  sx={{ width: "3rem", height: "3rem" }}
+                />
+                <Typography
+                  variant="body1"
+                  sx={{
+                    ml: "1rem",
+                    flexGrow: 1
+                  }}
+                >
+                  Trevor Po
+                </Typography>
+                <IconButton sx={{ width: "2rem", height: "2rem" }} onClick={() => setDrawer(false)}>
+                  <CloseIcon />
+                </IconButton>
+              </Box>
+              <Divider />
+              <List>
+                {tabs.map(({ title, to }) => (
+                  <ListItem key={to} disablePadding>
+                    <ListItemButton
+                      sx={{
+                        py: "0.7rem",
+                        textAlign: "center",
+                        justifyContent: "center",
+                        "&:hover": {
+                          color: "#5980c1",
+                          opacity: 1
+                        }
+                      }}
+                      disableRipple
+                      onClick={() => scrollToSection(title)}
+                    >
+                      <Typography sx={{ fontSize: "0.9rem" }}>{title.toUpperCase()}</Typography>
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </SwipeableDrawer>
+          </Toolbar>
+        </Box>
+      </AppBar>
   );
 }
 
@@ -142,7 +147,6 @@ const StyledTabs = styled((props) => (
 });
 
 const StyledTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
-  marginRight: theme.spacing(1),
   color: "rgba(255, 255, 255, 0.7)",
   "&.Mui-selected": {
     color: "#5980c1"

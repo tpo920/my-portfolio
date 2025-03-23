@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, Avatar, Typography, Divider, IconButton, Link, Snackbar, Grid } from "@mui/material";
-import { useInView } from "react-intersection-observer";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import CloseIcon from "@mui/icons-material/Close";
 
-function Home({ onScrollChange }) {
+function Home() {
   const [open, setOpen] = useState(false);
-  const { ref: myRef, inView: homeView } = useInView({ threshold: 0.2 });
 
   // Open Snackbar
   const handleClick = () => {
@@ -23,25 +21,16 @@ function Home({ onScrollChange }) {
     setOpen(false);
   };
 
-  // Set NavBar to home tab
-  useEffect(() => {
-    if (homeView) {
-      onScrollChange("one");
-    }
-  }, [homeView]);
-
   return (
     <Box
-      ref={myRef}
-      component="section"
-      id="home"
       sx={{
         width: "100%",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        position: "relative"
       }}
     >
       <Grid container spacing={3}>
@@ -63,8 +52,8 @@ function Home({ onScrollChange }) {
               <Typography variant="subtitle1">
                 Software Engineering Student @ The University of Auckland
               </Typography>
-              <Divider sx={{ width: "40%", color: "primary.main" }} />
-              <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.9rem" }}>
+              <Divider sx={{ width: "40%", bgcolor: "primary.light", borderBottomWidth: 3 }} />
+              <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.8rem" }}>
                 I am an ambitious software engineering student eager to gain real-world experience
                 and to advance my technical and soft skills. This industry is an exciting career
                 path for me as it enables me to think outside the box and work within a

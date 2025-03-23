@@ -1,46 +1,39 @@
-import { useEffect } from "react";
-import { Box, Grid, Typography } from "@mui/material";
-import { useInView } from "react-intersection-observer";
+import { Box, Grid, Typography, Divider, Container } from "@mui/material";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../utils/ProjectData";
 
-function Projects({ onScrollChange }) {
-  const { ref: myRef, inView: projectsView } = useInView({ threshold: 0.2 });
-
-  // Set NavBar to projects tab
-  useEffect(() => {
-    if (projectsView) {
-      onScrollChange("three");
-    }
-  }, [projectsView]);
-
+function Projects() {
   return (
     <Box
-      ref={myRef}
-      component="section"
-      id="projects"
       sx={{
         width: "100%",
-        minHeight: "100vh",
+        minHeight: "120vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        mt: "1rem"
+        position: "relative"
       }}
     >
-      <Typography variant="h5" color="primary.dark">
-        PROJECTS
-      </Typography>
-      <Box sx={{ justifyContent: "center", display: "flex" }}>
-        <Grid container spacing={2} p={3}>
+      <Container>
+        <Box sx={{
+          display: "flex",
+          flexDirection: "column",
+          mt: "4rem",
+          mb: "4rem",
+        }}>
+          <Typography variant="h4">Featured Projects</Typography>
+          <Divider sx={{ width: "15%", bgcolor: "primary.light", borderBottomWidth: 3, mt: "0.1rem" }} />
+          <Typography variant="subtitle1">An overview of recent projects I have been involved in. </Typography>
+        </Box>
+        <Grid container spacing={2} p={0} >
           {projectsData.map((project) => (
-            <Grid item key={project.title} md={6}>
-              <ProjectCard key={project.title} project={project} />
+            <Grid item key={project.title} md={6} >
+              <ProjectCard key={project.key} project={project} />
             </Grid>
           ))}
         </Grid>
-      </Box>
+      </Container>
     </Box>
   );
 }
