@@ -3,7 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Box } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 import HomePage from "./pages/Home";
-import AboutMePage from "./pages/AboutMe";
 import ExperiencePage from "./pages/Experience";
 import ProjectsPage from "./pages/Projects";
 import NavBar from "./components/NavBar";
