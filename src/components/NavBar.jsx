@@ -72,6 +72,7 @@ export default function NavBar({ tabs, value, handleChange }) {
               disableBackdropTransition={!iOS}
               disableDiscovery={iOS}
               open={drawer}
+              onOpen={() => setDrawer(true)}
               onClose={() => setDrawer(false)}
               SlideProps={{ easing: "ease-in-out" }}
             >

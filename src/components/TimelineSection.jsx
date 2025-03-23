@@ -57,15 +57,15 @@ export default function TimelineSection({ experience, expanded, handleChange }) 
                         </Box>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography variant="body2" align="left">
-                            <List disablePadding sx={{ listStyleType: 'disc', ml: "0.9rem" }}>
-                                {(experience.content).map((line) => (
-                                    <ListItem key={line} disableGutters disablePadding sx={{ display: 'list-item' }}>
+                        <List disablePadding sx={{ listStyleType: 'disc', ml: "0.9rem" }}>
+                            {(experience.content).map((line) => (
+                                <ListItem key={line} disableGutters disablePadding sx={{ display: 'list-item' }}>
+                                    <Typography variant="body2" align="left">
                                         {line}
-                                    </ListItem>
-                                ))}
-                            </List>
-                        </Typography>
+                                    </Typography>
+                                </ListItem>
+                            ))}
+                        </List>
                     </AccordionDetails>
                 </Accordion>
             </TimelineContent>

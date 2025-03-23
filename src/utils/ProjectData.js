@@ -1,44 +1,52 @@
 const projectsData = [
   {
-    title: "Bluetooth Logger Aggregator",
-    date: "Feb 2024",
+    title: "Visual LegalRuleML Editor with Auto-completion",
+    date: "Oct 2024",
     description:
-      "This intern project focused on using Bluetooth Low Energy to talk to third-party loggers with LogTag’s UTRED30-Wifi logger by implementing a state handler and building on legacy code",
-    image: "/images/BluetoothProjectImage.jpg",
-    imageLabel: "Bluetooth Project Image",
-    link: "https://logtagrecorders.com/",
-    tech: "C, Python"
+      "A block-based visual programming editor built on Blockly to support the construction and representation of a " +
+      "simplified LegalRuleML format through visual auto-completion with deep-learning model suggestions.",
+    image: "/images/visuallegalruleeditor.png",
+    imageLabel: "Visual LegalRuleML Editor Image",
+    link: "https://github.com/tpo920/Visual-LegalRuleML-Editor-with-Auto-completion",
+    tech: "React, Blockly, Flask",
+    key: "visuallegalrule123",
+  },
+  {
+    title: "Pizza Shop Management Simulator",
+    date: "July 2024",
+    description:
+      "Pizza Shop is a business management educational game that enables players to take on " +
+      "the role of a pizza store manager to maximise profits through applying theoretical business " +
+      "concepts learnt throughout the game.",
+    image: "/images/PizzaBusinessGame.png",
+    imageLabel: "Pizza Game Image",
+    link: "https://github.com/tpo920/Pizza-Shop-Management-Simulator",
+    tech: "React, Phaser",
+    key: "pizza123"
+  },
+  {
+    title: "RecipAI: Personalised Recipe Generator  ",
+    date: "June 2024",
+    description:
+      "A full-stack web application to streamline the process of meal ideation and fitness tracking through utilising " +
+      "OpenAI for a personalised experience and providing automated macro-nutrients tracking.",
+    image: "/images/RecipAI.png",
+    imageLabel: "RecipAI Image",
+    link: "https://github.com/UOA-CS732-SE750-Students-2024/project-group-jolly-jaguars",
+    tech: "Next.js, Firebase, Material UI, OpenAI",
+    key: "recipai123"
   },
   {
     title: "Typefaceoff",
-    date: "Oct 2023",
+    date: "August 2023",
     description:
-      "A collaborative front-end web tool to compare font-files uploaded with drag-and-drop functionality. Font-files are shown through editable text templates for efficient comparisions",
+      "A collaborative front-end web tool to compare font-files uploaded with drag-and-drop functionality. Font-files are shown through editable text templates for efficient comparisions.",
     image: "/images/TypefaceoffProjectImage.png",
     imageLabel: "Typefaceoff Project Image",
     link: "https://github.com/typefaceoff/typefaceoff",
-    tech: "React, Typescript, CSS/HTML"
+    tech: "React, Vanilla CSS",
+    key: "typefaceoff123"
   },
-  {
-    title: "Kicks",
-    date: "July 2023",
-    description:
-      "Kicks is a revolutionary sneaker app where consumers can browse and purchase a range of sneakers, the app sources from multiple renown sneaker brands to satisfy the needs and wants of any consumer.",
-    image: "/images/AndroidProjectImage.png",
-    imageLabel: "Android Project Image",
-    link: "https://github.com/UOASOFTENG306/project-1-project-1-team-41",
-    tech: "Java"
-  },
-  {
-    title: "Just Draw",
-    date: "July 2022",
-    description:
-      "Just Draw is a speed-drawing GUI application with various gamemodes and features to promote creativity and provide an entertaining method to draw",
-    image: "/images/DrawingProjectImage.jpg",
-    imageLabel: "Drawing Project Image",
-    link: "https://github.com/tpo920/Speed-Drawing-Project",
-    tech: "Java/ JavaFX"
-  }
 ];
 
 export default projectsData;

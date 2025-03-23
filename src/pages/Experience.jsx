@@ -31,7 +31,7 @@ function Experience() {
     > 
       <Container sx={{ display: "flex", flexDirection: "column", alignItems: "center", mt: "7rem" }}>
         <Box sx={{
-          mb: "4rem",
+          mb: "3rem",
         }}>
           <Typography variant="h4" sx={{ color: "#fff", fontWeight: "medium" }}>
             Work Experience

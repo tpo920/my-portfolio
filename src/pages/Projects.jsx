@@ -7,7 +7,7 @@ function Projects() {
     <Box
       sx={{
         width: "100%",
-        minHeight: "100vh",
+        minHeight: "120vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -15,31 +15,25 @@ function Projects() {
         position: "relative"
       }}
     >
-      <Grid container spacing={3}>
-        <Grid item xs={1} md={2} />
-        <Grid item xs={10} md={7}>
-          <Container>
-            <Box sx={{
-              display: "flex",
-              flexDirection: "column",
-            }}>
-              <Typography variant="h4">Featured Projects</Typography>
-              <Divider sx={{ width: "15%", bgcolor: "primary.light", borderBottomWidth: 3, mt: "0.1rem" }} />
-              <Typography variant="subtitle1">An overview of recent projects I have been involved in. </Typography>
-            </Box>
-            <Grid container spacing={2} >
-              {projectsData.map((project) => (
-                <>
-                  <Grid item md={2} />
-                  <Grid item key={project.title} md={10}>
-                    <ProjectCard key={project.title} project={project} />
-                  </Grid>
-                </>
-              ))}
+      <Container>
+        <Box sx={{
+          display: "flex",
+          flexDirection: "column",
+          mt: "4rem",
+          mb: "4rem",
+        }}>
+          <Typography variant="h4">Featured Projects</Typography>
+          <Divider sx={{ width: "15%", bgcolor: "primary.light", borderBottomWidth: 3, mt: "0.1rem" }} />
+          <Typography variant="subtitle1">An overview of recent projects I have been involved in. </Typography>
+        </Box>
+        <Grid container spacing={2} p={0} >
+          {projectsData.map((project) => (
+            <Grid item key={project.title} md={6} >
+              <ProjectCard key={project.key} project={project} />
             </Grid>
-          </Container>
+          ))}
         </Grid>
-      </Grid>
+      </Container>
     </Box>
   );
 }
