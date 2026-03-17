@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Avatar, Typography, Divider, IconButton, Link, Snackbar, Grid } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -40,7 +40,7 @@ function Home() {
             <Grid item md={1.5} sx={{ display: { sm: "none", md: "flex" } }} />
             <Grid item xs={12} sm={6} md={6}>
               <Typography variant="h3" component="span" sx={{ fontFamily: "Poppins" }}>
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
               </Typography>
               <Typography
                 variant="h3"
@@ -50,14 +50,14 @@ function Home() {
                 Trevor
               </Typography>
               <Typography variant="subtitle1">
-                Software Engineering Student @ The University of Auckland
+                Software Engineering Graduate
               </Typography>
               <Divider sx={{ width: "40%", bgcolor: "primary.light", borderBottomWidth: 3 }} />
               <Typography variant="body1" sx={{ mt: "1rem", fontSize: "0.8rem" }}>
-                I am an ambitious software engineering student eager to gain real-world experience
+                I am an ambitious graduate eager to progress within software development
                 and to advance my technical and soft skills. This industry is an exciting career
-                path for me as it enables me to think outside the box and work within a
-                multi-disciplinary environment.
+                path for me as I am able to build unique, innovative solutions and work
+                within multidisciplinary environments.
               </Typography>
               <Box sx={{ ml: "-0.5rem", mt: "1rem", display: "flex" }}>
                 <Link

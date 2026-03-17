@@ -17,7 +17,7 @@ export default function TimelineSection({ experience, expanded, handleChange }) 
     return (
         <TimelineItem>
             {
-                experience.title === "P2 ECSE Mentor"
+                experience.title === "Software Intern"
                     ?
                     <TimelineOppositeContent color="#fff">
                         Now
@@ -26,7 +26,7 @@ export default function TimelineSection({ experience, expanded, handleChange }) 
                     null
             }
             <TimelineSeparator>
-                {experience.title === "P2 ECSE Mentor" ? <TimelineDot sx={{ backgroundColor: "#fff" }} />
+                {experience.title === "Software Intern" ? <TimelineDot sx={{ backgroundColor: "#fff" }} />
                     : <TimelineDot sx={{ backgroundColor: "transparent", borderColor: "#fff" }} />}
                 <TimelineConnector sx={{ bgcolor: "#fff" }} />
             </TimelineSeparator>
