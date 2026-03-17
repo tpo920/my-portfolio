@@ -23,6 +23,7 @@ import { useWindowSize } from "../hooks/useWindowSize";
 export default function NavBar({ tabs, value, handleChange }) {
   const [drawer, setDrawer] = useState(false);
   const iOS = typeof navigator !== "undefined" && /iPad|iPhone|iPod/.test(navigator.userAgent);
+  const windowSize = useWindowSize();
 
   const scrollToSection = async (ref) => {
     document.getElementById(ref.toLowerCase()).scrollIntoView({ behavior: "smooth" });
@@ -31,7 +32,7 @@ export default function NavBar({ tabs, value, handleChange }) {
 
   useEffect(() => {
     setDrawer(false);
-  }, [useWindowSize()]);
+  }, [windowSize]);
 
   return (
       <AppBar position="fixed" sx={{ background: "#fefefe" + 'ef', boxShadow: "none" }}>
