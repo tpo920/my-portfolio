@@ -1,5 +1,4 @@
-﻿# My Portfolio
-A simple portfolio about me
+﻿# Depreciated, new portfolio at [tpo-portfolio](https://github.com/tpo920/tpo-portfolio)
 
 ## 💾 Development - 🔧 Currently in works for new features
 This project uses:
